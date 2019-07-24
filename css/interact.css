@@ -1,5 +1,6 @@
 body {
-    background-image: url("../img/splat_bg.png");
+    /*noinspection CssUnknownTarget*/
+    background-image: url("img/splat_bg.png");
     background-attachment: fixed;
     margin-bottom:50px;
 }
@@ -11,7 +12,7 @@ body {
 .helper-text {
     color: #ff69b4;
     background-color:transparent;
-    left: 80%px;
+    left: 80%;
 }
 
 #cover {
