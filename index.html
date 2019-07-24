@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from squidgoals.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Jul 2019 20:25:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="keywords" content="Splatoon, Strategy, Draw, Guide, Plan, Nintendo, Wii U, Competitive">
+    <meta name="description" content="Competitive Strategy Planner and call-out map creator for Splatoon">
+    <title>Squid Goals 2.0 - Super Fresh Strategy Whiteboard for Splatoon 2</title>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="js/iscroll-lite.js"></script>    
+    <script type="text/javascript" src="js/discord.min.js"></script>  
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet">
+    <link href="css/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/interact.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-colorpicker.min.css">
+    <link rel="icon" type="image/png" href="img/iconpurp.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+        
+</head>
+<body>
+<div id="cover">
+    <h1 class="wendy animated fadeIn"> SQUID GOALS 2 . 0</h1>
+    <h3 class="animated infinite fadeIn wendy" >
+            <span> <img  class="animated infinite pulse" src="img/icon.png"/>
+            </span><span class="animated infinite pulse wendy" >&nbsp; Loading ...</span>
+    </h3>
+</div>    
+<div class="container-fluid pt-3 pb-4 mb-4">
+	<div class="row mx-sm-1">
+		<div class="col-12" id="map-container">
+        	<div class="row" >
+            	<div class="col-12">
+                	<div class="wrapper"  id="spawn-point">
+                    	<img src="#" id="map-img" class="map-img img-fluid img-thumbnail" draggable="false"/>
+                        <div id="draw-container" class="draw-container">
+                        	<img class="download-brand" id="download-brand" src="img/download-brand.png"/> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+
+<div class="container-fluid"  id="nav-main">
+
+<!-- MAIN NAV CONTAINER -->
+	<div class="row mx-sm-1" id="nav-inner"  >        
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 pt-3 pb-2">
+		
+		<!-- MAIN NAVIGATION -->
+			<div class="btn-group mr-2 mb-2" role="group" aria-label="...">
+
+				<button type="button" class="btn btn-outline-dark help-toggle wendy" style="background-color:#FF1D8E;color:white;">
+					<strong> SQUID GOALS 2.0</strong>
+				</button>
+				<button type="button" class="active btn btn-outline-dark nav-toggle-group1 help-toggle" id="map">
+					<i class="fa fa-map"></i>
+				</button>
+				<button type="button" class="btn btn-outline-dark nav-toggle-group1 help-toggle" id="draw">
+					<i class="fa fa-paint-brush "></i>
+				</button>
+				<button type="button" class="btn btn-outline-dark nav-toggle-group1 help-toggle" id="object">
+					<i class="fa fa-map-pin "></i>
+				</button>
+				<button type="button" class="btn btn-outline-dark nav-toggle-group1 help-toggle"  id="export" >
+					<i class="fa fa-send "></i>
+				</button>      
+
+			</div>
+						
+		<!-- MAPS MODES -->
+			<div class="btn-group nav-holder-group1 mb-2 mr-1 map-holder" id="map-holder" role="group" aria-label="...">
+				
+				<div class="dropdown " >
+		
+						<button class="btn btn-outline-dark dropdown-toggle stage-holder mr-2 help-toggle" type="button" 
+									id="SM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Starfish Mainstage
+						
+						</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<a class="dropdown-item stages" href="#" id="IA">Inkblot Art Academy </a>
+						<a class="dropdown-item stages" href="#" id="HP">Humpback Pump Track</a>
+						<a class="dropdown-item stages" href="#" id="MF">Musselforge Fitness</a>
+						<a class="dropdown-item stages" href="#" id="SM">Starfish Mainstage </a>
+						<a class="dropdown-item stages" href="#" id="SS">Sturgeon Shipyard</a>
+						<a class="dropdown-item stages" href="#" id="TR">The Reef</a>
+						<a class="dropdown-item stages" href="#" id="PM">Port Mackerel</a>
+						<a class="dropdown-item stages" href="#" id="MT">Moray Towers</a>
+						<a class="dropdown-item stages" href="#" id="MM">Manta Maria</a>
+						<a class="dropdown-item stages" href="#" id="KD">Kelp Dome</a>
+					</div>
+										
+				</div>
+				
+
+				<!---   
+				<div class="dropdown " >
+		
+						<button class="btn btn-outline-dark dropdown-toggle stage-holder mr-2 help-toggle" type="button" 
+									id="SM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Starfish Mainstage
+						
+						</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" ng-app="myApp" ng-controller="namesCtrl">
+						<a ng-repeat="x in maps | orderBy:'name'" class="dropdown-item stages" href="#" ng-attr-id="{{x.id}}"> {{x.name }} </a>
+					</div>
+										
+				</div>
+
+
+		  -->
+				<div class="dropdown">
+								
+						<button class="btn btn-outline-dark dropdown-toggle mode-holder help-toggle" type="button" 
+										id="B" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Turf War
+						</button>
+	
+					<div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+						<a class="dropdown-item modes" href="#" id="A">Turf War</a>
+						<a class="dropdown-item modes" href="#" id="B">Splat Zones</a>
+						<a class="dropdown-item modes" href="#" id="C">Tower Control</a>
+						<a class="dropdown-item modes" href="#" id="D">Rainmaker</a>
+					</div>	
+
+				</div>
+			</div>
+			<button type="button" class="nav-holder-group1 rotate btn btn-outline-dark mb-2 map-holder" id="orientation">
+				<i id="orientation-icon" class="fa fa-arrows-v "></i>
+			</button>  
+				
+		<!-- DRAW NAV -->
+			<div class="btn-group nav-holder-group1 mb-2 mr-2 draw-holder" id="draw-holder" role="group" aria-label="...">
+
+				<button type="button" class="color-button btn btn-outline-dark cp help-toggle" id="cp-draw">
+					<i class="fa fa-paint-brush "></i>
+				</button>
+
+				<button type="button" class="point-size-up btn btn-outline-dark help-toggle" id="point-size-up">
+					<i class="fa fa-expand" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="point-size-down btn btn-outline-dark help-toggle" id="point-size-down">
+					<i class="fa fa-compress" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="btn btn-outline-dark  undo help-toggle" id="undo">
+					<i class="fa fa-undo" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="btn btn-outline-dark  redo help-toggle" id="redo">
+					<i class="fa fa-repeat" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="btn btn-outline-dark  clear help-toggle" id="clear">
+					<i class="fa fa-trash" aria-hidden="true"></i>
+				</button>
+
+			</div>	
+						
+		<!-- DOWNLOAD Main NAV -->
+			<div class="btn-group nav-holder-group1 mb-2 mr-2 export-holder animated fadeInUp" id="export-holder" role="group" aria-label="...">
+				<div class="btn-group">
+					<button type="button" class="btn btn-outline-dark wendy" id="download">
+						<i class="fa fa-download "> </i> .png
+					</button>
+  				<button type="button" class="btn btn-outline-dark" id="discord">
+						<span><img src="img/discord.png"  style="height:1.3em;"/></span>
+					</button>
+				</div>
+			</div>
+
+			<!-- Fetch Hook -->
+			<div class="btn-group nav-holder-group1 mb-2 mr-2 discord-holder animated fadeInUp" id="discord-holder" role="group" aria-label="...">
+
+				<div class="input-group">
+					<span class="input-group-btn">
+           	<button id="register" class="btn  btn-outline-dark wendy info-launch" type="button">
+           		<i class="fa fa-question-circle" aria-hidden="true"></i>
+           	</button>
+          </span>
+        	<input id="discord-hook-input" type="text" class="form-control"  placeholder="Registered Webhook Name" aria-describedby="sizing-addon2">
+          <span class="input-group-btn">
+           	<button id="discord-hook-submit" class="btn  btn-outline-dark wendy" type="button">
+           		<i class="fa fa-arrow-right" aria-hidden="true"></i>
+           	</button>
+          </span>
+
+        </div>
+			</div>
+
+			<!-- Send Hook -->
+			<div class="btn-group nav-holder-group1 mb-2 mr-2 submit-export-holder animated fadeInUp" id="name-holder" role="group" aria-label="...">
+  			<div class="input-group">
+        	<input id="export-text" type="text" class="form-control"  aria-describedby="sizing-addon2">
+          <span class="input-group-btn">
+           	<button id="export-send" class="btn  btn-outline-dark wendy" type="button"> <span id="hook-name"> </span></button>
+          </span>
+        </div>
+			</div>
+
+			
+
+			
+						
+		<!-- OBJECT NAV -->
+			<div  class="btn-group nav-holder-group1 mr-2 mb-2 object-holder" id="object-holder" role="group">
+				<button type="button" class="btn btn-outline-dark btn-sm object-btn" id="text">
+					<span class="" style="font-size:1.3em; color:black;">T</span>
+				</button>
+								
+				<button type="button" class="btn btn-outline-dark btn-sm object-btn" id="weapons">
+					<img   src="img/w_icon.png"  style="width:1.7em;"/>
+				</button> 
+								
+				<button type="button" class="btn btn-outline-dark btn-sm object-btn" id="subs">
+					<img   src="img/s_icon.png"   style="width:1.5em;"/>
+				</button>
+								
+				<button type="button" class="btn btn-outline-dark btn-sm object-btn" id="specials">
+					<span style="width:100%;height:100%"><img src="img/sp_icon.png"  style="width:1.5em;"/></span>
+				</button>
+			</div>  
+					 
+		<!-- TEXT STYLES NAV -->
+			<div class="btn-group nav-holder-group1 mb-2 mr-2" id="text-style-holder" role="group" aria-label="...">
+						
+				<button type="button" class="color-text btn btn-outline-dark cp" id="cp-text">
+					<i class="fa fa-font" aria-hidden="true"></i>
+				</button>
+				<button type="button" class="color-border btn btn-outline-dark cp" id="cp-text-border">
+					<i class="fa fa-square-o border-icon" id="border-icon" aria-hidden="true"></i>
+				</button>
+				<button type="button" class="color-background btn btn-outline-dark cp" id="cp-text-background">
+					<i class="fa fa-tint background-icon" id="background-icon" aria-hidden="true"></i>
+				</button>
+				<button type="button" class="size-up btn btn-outline-dark" id="text-size-up">
+					<i class="fa fa-expand" aria-hidden="true"></i>
+				</button>
+				<button type="button" class="size-down btn btn-outline-dark" id="text-size-down">
+					<i class="fa fa-compress" aria-hidden="true"></i>
+				</button>
+				<button type="button" class="btn btn-outline-dark delete" id="delete-object">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</button>
+				<button type="button" class="btn btn-outline-dark clear-objects" id="clear-objects">
+					<i class="fa fa-trash" aria-hidden="true"></i>
+				</button>
+								
+			</div>
+						
+		<!-- STYLES NAV -->
+			<div class="btn-group nav-holder-group1 mb-2 mr-2" id="style-holder" role="group" aria-label="...">
+							
+				<button type="button" class="color-border btn btn-outline-dark cp" id="cp-border">
+					<i class="fa fa-square-o border-icon" id="border-icon" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="color-background btn btn-outline-dark cp" id="cp-background">
+					<i class="fa fa-tint background-icon" id="background-icon" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="size-up btn btn-outline-dark " id="size-up">
+					<i class="fa fa-expand" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="size-down btn btn-outline-dark " id="size-down">
+					<i class="fa fa-compress" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="btn btn-outline-dark delete" id="delete-object">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</button>
+								
+				<button type="button" class="btn btn-outline-dark clear-objects" id="clear-objects">
+					<i class="fa fa-trash" aria-hidden="true"></i>
+				</button>
+								
+			</div>
+
+
+			<!-- INFO Button -->
+			<div class="btn-group mb-2 mr-2 pull-right "  role="group" aria-label="...">
+				<button type="button" class="btn animated fadeInUp helper-text info-launch " href="info2.html">
+					<i class="fa fa-question-circle " aria-hidden="true"></i>
+				</button>		
+			</div>
+		</div>
+	</div>
+
+<!-- COLOR PICKER CONTAINER -->
+	<div class="row mx-1">
+  	<div class="col-12">
+      <div id="cp-holder">
+			</div>
+    </div>
+  </div>
+
+<!-- OBJECT CREATION CONTAINER -->
+	<div class="row mx-1">
+		<div class="col-12">
+				<div class="row btn-toolbar mb-3 text-table objects-table animated fadeInUp">
+  	<div class="col-sm-12 col-md-6">
+  		<div class="input-group">
+      		<textarea rows="3" class="form-control b-b" id="div-text"> </textarea> 
+      		<span style="margin-left:5px;">
+        		<button class="btn btn-outline-dark spawn wendy" type="button">Create</button>
+      		</span>
+    	</div>
+	</div>
+</div>
+<!--
+<div class="btn-toolbar mb-3 text-table objects-table animated fadeInUp" role="toolbar" >
+	<div class="row">
+  		<div class="col-sm-12 col-md-6">
+  			<div class="input-group">
+      			<input type="text" class="form-control" placeholder="Search for...">
+      			<span class="input-group-btn">
+        			<button class="btn btn-secondary" type="button">Go!</button>
+      			</span>
+    		</div>
+			<div class="input-group mr-2">
+    			<input type="text" id="div-text" class="form-control">
+  			</div>
+  			<div class="btn-group mr-2" role="group" >
+    			<button type="button" class="btn btn-outline-dark spawn wendy">Create</button>
+  			</div>
+  		</div>
+  	</div>
+</div>-->				<ul class="nav subs-table objects-table animated fadeInUp" style="width: 100%; list-style-type: none; margin: auto; border-top:1px solid black;
+   border-bottom:1px solid black; overflow-x: scroll; white-space: nowrap; display:inline-block;" >
+	<a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Autobomb.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Burst_Bomb.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Curling_Bomb.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Ink_Mine.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Point_Sensor.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Splash_Wall.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Splat_Bomb.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Sprinkler.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Squid_Beakon.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Suction_Bomb.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/subs2/Toxic_Mist.png" /></a>
+</ul>				<ul class="nav specials-table objects-table animated fadeInUp" style="width: 100%; list-style-type: none; margin: auto; border-top:1px solid black;
+   border-bottom:1px solid black; overflow-x: scroll; white-space: nowrap; display:inline-block; " >
+	<a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Baller.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Ink_Armor.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Ink_Storm.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Inkjet.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Splashdown.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Splat-Bomb_Launcher.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Sting_Ray.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/specials2/Tenta_Missiles.png" /></a>
+ </ul>				<ul class="nav weapons-table objects-table animated fadeInUp" style="width: 100%; list-style-type: none; margin: auto; border-top:1px solid black;
+   border-bottom:1px solid black; overflow-x: scroll; white-space: nowrap; display:inline-block;  height:46px; " >
+	<a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/52_Gal.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/96_Gal.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Aerospray_MG.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Aerospray_RG.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Blaster.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Carbon_Roller.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Dapple_Dualies.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Dualie_Squelchers.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Dynamo_Roller.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/E-liter_4K.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/E-liter_4K_Scope.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Enperry_Splat_Dualies.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Firefin_Splat_Charger.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Firefin_Splatterscope.png" /></a>							
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Flingza_Roller.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Goo_Tuber.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/H-3_Nozzlenose.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Heavy_Splatling.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Inkbrush.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Jet_Squelcher.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Krak-On_Splat_Roller.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/L-3_Nozzlenose.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Luna_Blaster.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Mini_Splatling.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/N-ZAP_%2785.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Octobrush.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Rapid_Blaster.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Slosher.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splash-o-matic.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splat_Brella.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splat_Charger.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splat_Dualies.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splat_Roller.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splatterscope.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splattershot.png" /></a>
+    <a class="nav-link object"><img class="img-fluid shadowed" src="img/weapons2/Splattershot_Jr.png" /></a>
+</ul>		</div>
+	</div>
+
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>-->
+
+<script type="text/javascript" 
+		src="http://cdn.jsdelivr.net/interact.js/1.2.6/interact.min.js"></script>
+
+<script type="text/javascript"  src="js/interact.js"></script>
+
+<script src="js/html2canvas.js"></script>
+
+<script type="text/javascript"  src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<!--<script src="js/material.min.js"></script>-->
+
+<script src="js/prism.min.js"></script>
+
+<script data-cfasync="false" src="js/responsive-sketchpad.js"></script>
+
+<script src="https://use.fontawesome.com/d3c2058f5d.js"></script>
+
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script src="js/bootstrap-colorpicker.min.js"></script>
+<script src="new.js"></script>
+
+</body>

@@ -1,0 +1,254 @@
+body {
+    background-image: url("../img/splat_bg.png");
+    background-attachment: fixed;
+    margin-bottom:50px;
+}
+
+#loading-icons {
+  -vendor-animation-iteration-count: infinite;
+}
+
+.helper-text {
+    color: #ff69b4;
+    background-color:transparent;
+    left: 80%px;
+}
+
+#cover {
+    position: fixed; 
+    height: 100%; 
+    width: 100%; 
+    top:0; 
+    left: 0; 
+    background: white; 
+    z-index:9999; 
+    font-size: 60px; 
+    text-align: center; 
+    padding-top: 200px; 
+    color: #ff69b4;
+}
+
+
+#map-helper{
+    border:1px solid #ff69b4;
+    background-color: white;
+    color: black;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    border:1px solid #ff69b4;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 500;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tip-active:hover .tooltiptext {
+    visibility: visible;
+}
+
+#nav-main {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+   -webkit-transition: all 0.2s ease-in-out;
+    -webkit-transform-origin: 0 100%;
+    z-index:200;
+    background:rgba(255, 255, 255, 0.8);
+}
+
+
+.pink{
+	color: #ff69b4;
+}
+
+
+.wendy{  font-family: 'Wendy One', sans-serif;  }
+.lato{  font-family: 'lato', sans-serif;  }
+.raleway{  font-family: 'raleway', sans-serif;  }
+.dosis{  font-family: 'dosis', sans-serif;  }
+.anton{  font-family: 'anton', sans-serif;  }
+
+.pt8{ font-size: 8pt; }
+.pt10{ font-size: 10pt; }
+.pt12{ font-size: 12pt; }
+.pt14{ font-size: 14pt; }
+.pt16{ font-size: 16pt; }
+.pt18{ font-size: 18pt; }
+.pt20{ font-size: 20pt; }
+
+.bg-white{
+    background-color:white;
+    opacity:0.85;
+}
+
+.white{  color:white;  }
+.black{  color:black;  }
+
+.remove-radius{ border-radius:0 !important;}
+
+.no-padding-left{
+    padding-left:0  !important;
+    margin-left:0  !important;  }
+.no-padding-right{
+    padding-right:0 !important;
+    margin-right:0 !important;  }
+.min-padding-left{
+    padding-left:5px  !important;
+    margin-left:0  !important;  }
+.min-padding-right{
+    padding-right:5px !important;
+    margin-right:0 !important;  }
+
+.absolute-zero{
+    position:absolute;
+    top:0;
+    z-index: 2;
+    margin-left:-90px;
+    left:50%;
+}
+
+
+.draw-container{
+    position:absolute;
+    top:0;
+
+}
+.inner-wrapper{
+    position:absolute;
+    top:0;
+
+}
+
+/*
+.rotate-90 {
+	width:100%;
+	margin-left:0;
+	margin-right:0;
+
+  transform: rotate(90deg) translateY(-100%);
+  -webkit-transform: rotate(90deg) translateY(-100%);
+  -ms-transform: rotate(90deg) translateY(-100%);
+  transform-origin: top left;
+  /* IE 10+, Firefox, etc. */
+  /*webkit-transform-origin: top left;
+  /* Chrome */
+  /*-ms-transform-origin: top left;
+}*/
+
+.drag-object{
+    position: absolute;
+    top:50%;
+    left:50%;
+    border-radius: 0.5em;
+    padding:1px;
+}
+
+.drag-gear-object{
+    position: absolute;
+    top:50%;
+    left:50%;
+    border-radius: 0.5em;
+    border-width: 2px ;
+}
+
+.map-img{
+    padding:20px;
+    z-index:-1;
+}
+
+.mb-5{
+    margin-bottom:10px;
+}
+
+#nav-inner{
+    border-top:1px solid black;
+}
+
+.img-center{
+    margin: 0 auto;
+}
+
+.well{
+    max-height:150px;
+    overflow: scroll;
+}
+
+ .sticky-wrapper.affix {
+     position: fixed;
+     top:70px;
+  }
+
+@media (min-width: @screen-sm-min) {
+    .sticky-wrapper.affix {
+        display: none;
+
+    }
+}
+
+ .opacity-solid{
+     opacity:1.0;
+ }
+
+.download-brand{
+    display:none;
+    opacity:0.4;
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.nav-height{
+    max-height:45px;
+    padding-top:5px;
+    margin-left:auto;
+    margin-right:5px;
+}
+
+.alert{
+    border-style: solid;
+    border-color:black;
+    background: white;
+}
+
+.shadowed {
+    -webkit-filter: drop-shadow(5px 5px 5px #222); 
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.nav-link{
+	max-width:65px;
+	display: inline-block;
+}
+
+input[type='text'],
+input[type='number'],
+textarea {
+    border:1px solid black;
+    font-size: 14px;
+}
+
+.b-b{
+    border:1px solid black;
+    font-size: 12px;
+}
+
+.clear-check{
+    background-color:#f84c00;
+}
+
+.hidden {
+	display:none;
+}
