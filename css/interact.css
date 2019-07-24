@@ -1,6 +1,5 @@
 body {
-    /*noinspection CssUnknownTarget*/
-    background-image: url("img/splat_bg.png");
+    background-image: url("../img/splat_bg.png");
     background-attachment: fixed;
     margin-bottom:50px;
 }
