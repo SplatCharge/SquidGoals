@@ -12,7 +12,7 @@ body {
 .helper-text {
     color: #ff69b4;
     background-color:transparent;
-    left: 80%;
+    left: 80%px;
 }
 
 #cover {
