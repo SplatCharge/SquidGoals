@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 				// Send a message using the webhook
 				//hook.send('Im doing it');
-				//hook.sendFile('http://squidgoals.com/img/icon.png' );
+				//hook.sendFile('https://squidgoals.com/img/icon.png' );
        		}
     	});
 		}

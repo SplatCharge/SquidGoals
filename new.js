@@ -467,20 +467,20 @@
 
     				},
     				function(data, status){
-    					var urlx = "http://www.squidgoals.com/img/"+spaceless+".png";					
+    					var urlx = "https://www.squidgoals.com/img/"+spaceless+".png";
     					console.log(urlx);
     					const embed = new Discord.RichEmbed()
     					.setDescription(value)
   						.setTitle('SquidGoals.com')
   						.setColor(0xFF69B4 )
-  						.setURL("http://www.squidgoals.com")
+  						.setURL("https://www.squidgoals.com")
   						.setFooter(PageData.map + '~' + PageData.mode)
   						.setTimestamp()
-  						.attachFile('http://squidgoals.com/img/'+spaceless+'.png')
+  						.attachFile('https://squidgoals.com/img/'+spaceless+'.png')
   						.setImage('attachment://squidgoals.com/img/'+spaceless+'.png')
     				    console.log(embed);
 						//console.log(embed.setImage('attachment://squidgoals.com/img/TheReef:TurfWar.png'));
-						//hook.sendFile('http://squidgoals.com/img/'+spaceless+'.png').then($('#hook-name').html(' <i class="fa fa-check "> </i>'));
+						//hook.sendFile('https://squidgoals.com/img/'+spaceless+'.png').then($('#hook-name').html(' <i class="fa fa-check "> </i>'));
 						hook.send(embed);
 
     				});
